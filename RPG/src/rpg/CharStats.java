@@ -28,20 +28,21 @@ public class CharStats
         Scanner in = new Scanner(System.in);
         System.out.println("What class");
         charClass = in.next();
+        charClass = charClass.toLowerCase();
         System.out.println("What level");
         level = in.nextInt();
         switch (charClass)
         {
-            case "Mage":
+            case "mage":
                 health = 50;
-                armor = 0;
+                armor = 1;
                 mana = 100;
                 strength = 0;
                 dexterity = 0;
                 intelligence = 10;
                 break;
 
-            case "Knight":
+            case "knight":
                 health = 100;
                 armor = 5;
                 mana = 10;
@@ -50,7 +51,7 @@ public class CharStats
                 intelligence = 0;
                 break;
 
-            case "Ranger":
+            case "ranger":
                 health = 75;
                 armor = 2;
                 mana = 20;
@@ -62,9 +63,10 @@ public class CharStats
             default:
                 break;
         }
-        System.out.println("Health: " + (level * health) + "\n" + "Armor: " + (level * armor) + "\n" + "Mana: " + (level * mana)
-                + "\n" + "Strength: " + (level * strength) + "\n" + "Dexterity: " + (level * dexterity) + "\n" + "Intelligence: " + (level * intelligence));
-
     }
+    
+public String toString() {
+    return ("Health: " + (level * health) + "\n" + "Armor: " + (level * armor) + "\n" + "Mana: " + (level * mana) + "\n" + "Strength: " + (level * strength) + "\n" + "Dexterity: " + (level * dexterity) + "\n" + "Intelligence: " + (level * intelligence));
+}
 
 }
